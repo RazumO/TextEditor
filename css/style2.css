@@ -1,0 +1,18 @@
+body {
+	background-color: white;
+}
+
+img {
+	float: left;
+	padding: 2px;
+	margin: 1px;
+}
+
+ul, ol {
+	display: inline-block;
+	margin: 0px;
+}
+
+p {
+	margin: 0;
+}

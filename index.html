@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text editor</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="content">
+		<div id="menu">
+			<ul>
+				<li class="menuItemImg" style="width: 70px;" id="Font">
+					<ul id="subMenu">
+						<li class="fontItem" onclick="setFont(1)"><font size="1">Дрібний</font></li>
+						<li class="fontItem" onclick="setFont(3)"><font size="3">Звичайний</font></li>
+						<li class="fontItem" onclick="setFont(5)"><font size="5">Великий</font></li>
+						<li class="fontItem" onclick="setFont(7)"><font size="7">Величезний</font></li>
+					</ul>
+				</li>
+				<li class="menuItemImg" id="Bold" onclick="setBold()"></li>
+				<li class="menuItemImg" id="Italic" onclick="setItal()"></li>
+				<li class="menuItemImg" id="Underline" onclick="setUnderline()"></li>
+				<li class="menuItemImg" id="toOl" onclick="setOl()"></li>
+				<li class="menuItemImg" id="toUl" onclick="setUl()"></li>
+			</ul>
+		</div>
+		<br>
+		<iframe scrolling='no' frameborder='no' src='#' id='frameId' name='frameId' ></iframe>
+	</div>
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+</html>
