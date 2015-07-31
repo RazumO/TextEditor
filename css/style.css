@@ -46,11 +46,16 @@ iframe {
 }
 
 #subMenu {
-	/*width: 100px;*/
+	width: 280px;
 	position: relative;
 	opacity: 0.99;
+	background-color: white;
 	top: 54px;
 	visibility: hidden;
+}
+
+#subMenu li {
+	background-color: white;
 }
 
 #Font {
