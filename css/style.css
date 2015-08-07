@@ -19,18 +19,20 @@ iframe {
 #menu {
 	background-color: #F5F5F5;
 	height: 33px;
-	width: 320px;
+	width: 370px;
 	margin: 0 auto;
 }
 
 #menu ul {
 	margin: 0px;
 	padding: 0px;
+	height: 50px;
+	background-color: #F5F5F5;
 }
 
 #menu ul li {
 	list-style: none;
-	display: block;
+	/*display: block;*/
 	cursor: pointer;
 	opacity: .55;
 }
@@ -40,9 +42,12 @@ iframe {
 }
 
 .menuItemImg {
-	width: 50px;
+	width: 42px;
 	height: 50px;
 	float: left;
+	background-color: #F5F5F5;
+	color: #6F6F6F;
+	font-size: 12px;
 }
 
 #subMenu {
@@ -58,29 +63,20 @@ iframe {
 	background-color: white;
 }
 
+.table {
+	display: table;
+}
+
+.tableCell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
 #Font {
 	background: url(../img/html_editor_l.png) 0px 0px;
 }
 
-#Bold {
-	background: url(../img/html_editor_l.png) -70px 0px;
-}
-
-#Italic {
-	background: url(../img/html_editor_l.png) -120px 0px;
-}
-
-#Underline {
-	background: url(../img/html_editor_l.png) -170px 0px;
-}
-
-#toOl {
-	background: url(../img/html_editor_l.png) -345px 0px;
-}
-
-#toUl {
-	background: url(../img/html_editor_l.png) -390px 0px;
-}
 
 
 
