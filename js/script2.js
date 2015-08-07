@@ -2,52 +2,32 @@
 fontSize = 3;
 isBold = false;
 isCursive = false;
-isUnderlined = false
+isUnderlined = false;
 
 // ------------------Processing clipboard-----------
 
 function pasteFunction(e) {
-	e.preventDefault();
-
-	var images = [];
-	var text = '';
-	var items = e.clipboardData.items;
 	var types = e.clipboardData.types;
-	var length = items.length;
-	//Вибираю картинки з буферу
+	console.log(types);
+	//Якшо у буфері текст, то форматую його під налаштування
+	var isText = false;
+	var length = types.length;
 	for (var i = 0; i < length; i++) {
-		curItem = items[i];
-		if (('' + curItem.type).match(/image.*/)) {
-			images.push(i);
-		} else if (curItem.type == 'text/plain') {
-			text = e.clipboardData.getData('text/plain');
-			text = prepareText(text);
-			console.log(text);
-			window.focus();
-			window.document.execCommand("insertHTML", false, text);
+		if (types[i] == 'text/plain') {
+			isText = true;
 		}
 	}
-
-	console.log(types, images);
-	var imgCount = images.length;
-	for (var j = 0; j < imgCount; j++) {
-		var items = e.clipboardData.items;
-		var curImgIndex = images[j];
-		console.log(items[curImgIndex].type);
-		var blob = items[curImgIndex].getAsFile();
-		var reader = new FileReader();
-		reader.readAsDataURL(blob);
-		reader.onload = function(event){
-			var imgUrl = event.target.result;
-			console.log(imgUrl);
-			window.focus();
-  			window.document.execCommand("insertImage", true, imgUrl);
-		};
-
+	if (isText) {
+		e.preventDefault();
+		var data = e.clipboardData.getData('text/plain');
+		var text = prepareText(data);
+		window.focus();
+		window.document.execCommand("insertHTML", false, text);
 	}
-
-
+	//Якщо ні, то залишається дія по замовчуванню (виявилось, що браузери підтримують вставку картинок по замовчуванню)
 }
+
+
 
 function prepareText(text) {
 	var text = '<font size="' + fontSize + '">' + text + '</font>';
@@ -62,7 +42,6 @@ function prepareText(text) {
 	}
 	return text;
 }
-
 
 // ----------------------------drag&drop-------------------------
 
@@ -96,3 +75,7 @@ function dropProessing(e) {
 
 }
 
+window.onload = function (e) {
+	window.focus();
+	window.document.execCommand("insertHTML", false, '<span style="width: 1px;></span> ');;
+}
