@@ -4,7 +4,7 @@ var iframe = (isGecko) ? document.getElementById("frameId") : frames["frameId"];
 var iWin = (isGecko) ? iframe.contentWindow : iframe.window;
 var iDoc = (isGecko) ? iframe.contentDocument : iframe.document;
 
-iHTML = "<html><head><link rel='stylesheet' type='text/css' href='css/style2.css'></head><body id='drop' onpaste='pasteFunction(event)'></body><script type='text/javascript' src='js/script2.js'></script></html>";
+iHTML = "<html><head><link rel='stylesheet' type='text/css' href='css/style2.css'></head><body id='drop' contenteditable onpaste='pasteFunction(event)'></body><script type='text/javascript' src='js/script2.js'></script></html>";
 iDoc.open(); 
 iDoc.write(iHTML); 
 iDoc.close(); 
@@ -68,9 +68,19 @@ fontButton.addEventListener('click', function (e) {
 	}
 });
 
-var setFont = function(size) {
+var setFont = function (size) {
 	iWin.focus();
   	iWin.document.execCommand("fontSize", null, size);
   	console.log(iWin.fontSize);
   	iWin.fontSize = size;
+}
+
+var unDo = function () {
+  iWin.focus();
+  iWin.document.execCommand("undo", null, "");
+}
+
+var reDo = function () {
+  iWin.focus();
+  iWin.document.execCommand("redo", null, "");
 }

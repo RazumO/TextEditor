@@ -5,11 +5,14 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div id="content">
 		<div id="menu">
 			<ul>
+				<li class="menuItemImg table" onclick="unDo()"><span class="tableCell"><i class="fa fa-undo fa-2x"></i></span></li>
+				<li class="menuItemImg table" onclick="reDo()"><span class="tableCell"><i class="fa fa-repeat fa-2x"></i></span></li>
 				<li class="menuItemImg" style="width: 70px;" id="Font">
 					<ul id="subMenu">
 						<li class="fontItem" onclick="setFont(1)"><font size="1">Дрібний</font></li>
@@ -18,11 +21,11 @@
 						<li class="fontItem" onclick="setFont(7)"><font size="7">Величезний</font></li>
 					</ul>
 				</li>
-				<li class="menuItemImg" id="Bold" onclick="setBold()"></li>
-				<li class="menuItemImg" id="Italic" onclick="setItal()"></li>
-				<li class="menuItemImg" id="Underline" onclick="setUnderline()"></li>
-				<li class="menuItemImg" id="toOl" onclick="setOl()"></li>
-				<li class="menuItemImg" id="toUl" onclick="setUl()"></li>
+				<li class="menuItemImg table" onclick="setBold()"><span class="tableCell"><i class="fa fa-bold fa-2x"></i></span></li>
+				<li class="menuItemImg table" onclick="setItal()"><span class="tableCell"><i class="fa fa-italic fa-2x"></i></span></li>
+				<li class="menuItemImg table" onclick="setUnderline()"><span class="tableCell"><i class="fa fa-underline fa-2x"></i></span></li>
+				<li class="menuItemImg table" onclick="setOl()"><span class="tableCell"><i class="fa fa-list-ol fa-2x"></i></span></li>
+				<li class="menuItemImg table" onclick="setUl()"><span class="tableCell"><i class="fa fa-list-ul fa-2x"></i></span></li>
 			</ul>
 		</div>
 		<br>
